@@ -8,7 +8,6 @@ comments: false
     
 <center>关于我</center>
 
-
 ## Preview
 
 {% capture images %}
@@ -17,8 +16,6 @@ comments: false
 {% endcapture %}
 {% include gallery images=images caption="Screenshots of Moon Theme" cols=2 %}
 
-
 ## w
 这是[高亮](#) for more information.
-      
 [B](https://space.bilibili.com/432752){: .btn}
