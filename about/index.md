@@ -4,11 +4,12 @@ title: About Me
 tags: [about, Jekyll, theme, moon]
 date: 2020-02-16
 comments: false
+feature: https://i0.hdslb.com/bfs/archive/9408e23568eac32357452cfab66b36f9bf86835d.png
 ---
     
 <center>统计有思想，机器有思想，我没有思想</center>
-<br />>
-<center>关于我...</center>
+<br />
+<center>关于...</center>
 
 ## 二刺螈浓度检测
 
