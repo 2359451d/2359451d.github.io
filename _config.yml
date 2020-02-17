@@ -6,7 +6,7 @@ description:        "-未完成-"
 reading_time:       true
 words_per_minute:   200
 logo:               'assets/img/3.jpg'
-background:         'assets/img/4.jpg'
+background:         'https://i.pximg.net/img-master/img/2019/04/13/19/36/30/74182055_p0_master1200.jpg'
 tiled_bg:           true   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
 url:                https://2359451d.github.io/test
