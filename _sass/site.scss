@@ -17,7 +17,7 @@ body {
 	@include font-rem($doc-font-size);
 	color: $color_tuatara;
 	background-color: $white;
-	background-position: bottom;
+	background-position: left bottom;
 	background-repeat: no-repeat;	
 	background-attachment: fixed;
 	
