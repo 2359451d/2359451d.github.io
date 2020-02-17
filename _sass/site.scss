@@ -17,10 +17,10 @@ body {
 	@include font-rem($doc-font-size);
 	color: $color_tuatara;
 	background-color: $white;
-	background-position: left left;
+	background-position: left;
 	background-repeat: no-repeat;	
 	background-attachment: fixed;
-	background-size: 337px 480px;
+	
 	@media #{$small} {
 	    background-image: none !important;
 		background: $white;
