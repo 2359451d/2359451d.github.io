@@ -1,15 +1,15 @@
 # Site
 title:              便当
-bio:                '-未完成-
-  <a href="https://i.pximg.net/img-master/img/2019/04/13/19/37/17/74182068_p0_master1200.jpg">背景图源米山舞</a>'
+bio:                '-未完成-<br />
+  <a href="https://www.pixiv.net/artworks/74182068">背景图源-米山舞老师@yonema</a>'
 description:        "-未完成-"
 reading_time:       true
 words_per_minute:   200
 logo:               'assets/img/1.jpg'
 background:         'https://i.pximg.net/img-original/img/2019/04/13/19/37/17/74182068_p0.jpg'
-tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
+tiled_bg:           true   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
-url:                https://2359451d.github.io/test/
+url:                https://2359451d.github.io/test
 
 # Jekyll
 permalink:          /:title/
