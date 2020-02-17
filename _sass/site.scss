@@ -18,6 +18,7 @@ body {
 	color: $color_tuatara;
 	background-color: $bodycolor;
 	background-position: center center;
+	background-repeat: no-repeat;
 	background-attachment: fixed;
 	@media #{$small} {
 	    background-image: none !important;
