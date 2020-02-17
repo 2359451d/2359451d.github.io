@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About Me
+title: - About Me -
 tags: [about, Jekyll, theme, moon]
 date: 2020-02-16
 comments: false
@@ -11,7 +11,7 @@ feature: https://i0.hdslb.com/bfs/archive/9408e23568eac32357452cfab66b36f9bf8683
 <br />
 <center>关于...</center>
 
-## 二刺螈浓度检测
+## 💉二刺螈浓度检测
 
 - 叫什么都可以
 - 19年  计算机大二在读(菜源于自身,基础以及各种方面真的不如各位)
@@ -34,7 +34,7 @@ feature: https://i0.hdslb.com/bfs/archive/9408e23568eac32357452cfab66b36f9bf8683
 
 ---
 
-## 忙 ≠ 不菜
+## 🍃 忙 ≠ 不菜
 
 爱好方面
 
