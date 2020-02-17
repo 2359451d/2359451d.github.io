@@ -1,21 +1,48 @@
 ---
 layout: page
-title: About
+title: About Me
 tags: [about, Jekyll, theme, moon]
 date: 2020-02-16
 comments: false
 ---
     
-<center>关于我</center>
+<center>关于此人</center>
 
-## Preview
 
-{% capture images %}
-    https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png
-    https://cloud.githubusercontent.com/assets/754514/14509716/61ac6c8e-01d6-11e6-879f-8308883de790.png
-{% endcapture %}
-{% include gallery images=images caption="Screenshots of Moon Theme" cols=2 %}
+## :syringe: About Me - 二刺螈浓度检测
 
-## w
-这是[高亮](#) for more information.
-[B](https://space.bilibili.com/432752){: .btn}
+- 圈名 : :bento:，其实还有别的(。
+- CS在读(菜)，
+
+- **经常口嗨，现实自闭，网络蛆虫，屑屑**
+
+- 特技: 看不懂英语，看不懂japan文，看不懂韩文【非常清楚】
+
+- 生前是 ``舰狗，拉拉人，术术人``, 偶尔打↓音游追番搞gal(假的)，什么都玩，但反正就是颅内云玩家，**问就是忙，再问目力****
+
+- MMD(?~12)，UTAU(12~13)搞过几下
+  - MMD鉴于当时是弱智小学生，最后成D站业界毒瘤就退坑了，<a href="https://www.deviantart.com/miku737">仅有的黑历史存档</a>
+
+## :maple_leaf: ? 好宅哦，我都不看
+
+- 每天都在反思为什么这么菜，**所以以上活动全部终止，目前顶多只跟搓搓单机NS(游戏时长=0)**
+
+- 学到现在，莫得理论，莫得技术，莫得感情，莫得知识，拉低计院平均水平
+---
+
+## :herb: 忙≠不菜
+
+- 偶尔画下画(**调整后**)，只搞纸片人，搬点砖，其他时间不是学习就是**睡觉(主要活动)**
+  - 这点之前有其他安排,但是还是忙，所以不投入时间了【虽然希望之后有机会能系统学习下画画，心痒
+
+  - 喜欢的画师画手太多了列不下【？会画你们就多画点
+
+- 术力口
+  - 喜欢的P主: deme, aquabug, 助词，szm, jin, natsushiro，hachi, ryo, aqu3ra, 气球, Nam，酸，煮果实，n.k, zips, 橙星,拿不拿，电线杆，...【中考后其实就没怎么关注了，害
+
+- VTB
+  - 皮好看活生草都可以我都可以，就是没时间搞，顶多看神回
+
+---
+
+- _(┐「ε:)_人生大半，我怎么还是这么:herb:，不想努力了

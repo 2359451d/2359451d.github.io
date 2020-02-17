@@ -37,12 +37,12 @@ disqus_shortname:   taylantatli
   #ad-client:
   #ad-slot:
 #bing-verify:
-email:              996764007@qq.com
+# email:              996764007@qq.com
 bilibili:           432752
 lofter:             barlinbento
 # twitter:            username
 # facebook:           username
-github-url:         2359451d
+# github-url:         2359451d
 #stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
 #linkedin:          username
 #xing:              username
