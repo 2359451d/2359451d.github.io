@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: 想多了我怎么会有朋友
 date: 2020-02-17
 excerpt: "呜呜呜"
