@@ -21,7 +21,7 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;	
 	background-attachment: fixed;
-	background-size: 50%;
+	background-size: 35%;
 	@media #{$small} {
 	    background-image: none !important;
 		background: $white;
