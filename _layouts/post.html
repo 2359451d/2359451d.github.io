@@ -45,5 +45,16 @@ layout: compress
     <!-- MathJax -->
     <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     {% endif %}
+
+    {% unless page.fullwidth == true %}
+    <nav class="bs-docs-sidebar ">
+    <ul id="sideNav" class="nav bs-docs-sidenav">
+
+    <!-- code will be generated in application.js -->
+
+    </ul>
+    </nav>
+    {% endunless %}
+
 </body>
 </html>
