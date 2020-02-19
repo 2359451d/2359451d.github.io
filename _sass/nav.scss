@@ -369,3 +369,10 @@ All this is done for any sub-level being entered.
 .dl-menuopen li {
 	display: block
 }
+
+nav a.active {
+	border-bottom: 1px solid #2a7ae2;
+  }
+  .post-nav {
+	z-index: 10;
+  }
