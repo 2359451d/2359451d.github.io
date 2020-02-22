@@ -8,6 +8,36 @@ layout: compress
 <!--[if gt IE 8]><!--> <html class="no-js"><!--<![endif]-->
 <head>
     {% include head.html %}
+    <style>
+        #toc {
+            position: fixed;
+            left: 49%;
+            top: 10%;
+            margin-left: 450px;
+            border-left: 1px solid #eeeeee;
+            width:auto;
+            height:100%;
+            text-align: left;
+            font:13px/1.231 arial,helvetica,clean,sans-serif
+        }
+        #toc a {
+            display: block;
+            color: #cccccc;
+        }
+        #toc a:hover {
+            padding: 0;
+            color: var(--main-color,#12b886);
+        }
+        #toc .active a {
+            color: var(--main-color,#666666);
+        }
+        #toc ul {
+            margin-left: 1em;
+        }
+        #toc li {
+            display: list-item;
+        }
+        </style>
 </head>
 <body data-spy="scroll" data-target=".toc" data-offset="20">
     {% include nav.html %}
