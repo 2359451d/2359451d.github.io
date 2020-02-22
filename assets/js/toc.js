@@ -56,8 +56,7 @@
 
     var level = get_level(headers[0]),
       this_level,
-      /* 把 html = settings.title + " <" + settings.listType + ">" 变成如下 */
-      html = settings.title + " <" + settings.listType + " class = 'nav nav-pills nav-stacked'>";
+      html = settings.title + " <" +settings.listType + " class=\"" + settings.classes.list +"\">";
     headers.on('click', function() {
       if (!settings.noBackToTopLinks) {
         window.location.hash = this.id;

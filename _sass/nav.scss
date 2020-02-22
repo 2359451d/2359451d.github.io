@@ -376,3 +376,41 @@ nav a.active {
   .post-nav {
 	z-index: 10;
   }
+
+.toc {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	perspective: 1000px;
+	-webkit-perspective-origin: 50% 200%;
+	-moz-perspective-origin: 50% 200%;
+	perspective-origin: 50% 200%;
+	@media #{$notsmall} {
+		position: fixed;
+		max-width: 175px;
+		top: 25px;
+		left: 25px;
+	}
+	button {
+		top: 0;
+		left: 0;
+		background: $comp-color;
+		border: none;
+		width: 48px;
+		height: 45px;
+		text-indent: -900em;
+		overflow: hidden;
+		position: relative;
+		cursor: pointer;
+		outline: none;
+		@include border-radius(0,3px,0,0);
+		opacity: 0.6;
+		@media #{$notsmall} {
+			@include border-radius(3px,3px,3px,3px);
+		}
+	}
+}
