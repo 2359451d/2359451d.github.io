@@ -16,7 +16,7 @@ comments: true
 <strong>没什么文化素养，逻辑文笔不好，很抱歉。该blog用于学术(基本上只有笔记)，以下内容已经克制中二要素。</strong>
 
 - 叫什么都可以 g
-- 某村计算机在读(各方面低于专业平均水平，知识量技术落后同专业同学&同届很多，**本人很菜**)
+- 某村cs在读(知识量技术各方面低于专业平均水平，**菜**)
   - 目前课程安排...:
     - 大二上
       - SQL & User Research
@@ -30,6 +30,9 @@ comments: true
       - Algorithm and Data Structure
       - Web Application Development
       - Biology 1B
+    - 大三strand
+      - 暂定 network，os，cyber security，dba
+      - 学校没有图形学，纠结一下robotics
 
 - 现实自闭，网络蛆虫、，目前比较忙天天都在学习，**忙归忙，怎么就没有能掏出来的项目呢（悲）**
 
