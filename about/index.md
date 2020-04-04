@@ -31,8 +31,9 @@ comments: true
       - Web Application Development
       - Biology 1B
     - 大三strand
-      - 暂定 network，os，cyber security，dba
-      - 学校没有图形学，纠结一下robotics
+      - 暂定 **network，os**，cyber security，**dba**，遇事不决选三大件，学校排课有点水不太确定，信息安全能学到什么(目前听说之前最后大作业还比较有趣)，
+      - 学校没有想搞的图形学，会纠结一下robotics(openCL)，~~被小组项目搞出ptsd尽量会选项目少的那种~~
+      - 深度学习，你好强大
 
 - 现实自闭，网络蛆虫、，目前比较忙天天都在学习，**忙归忙，怎么就没有能掏出来的项目呢（悲）**
 
@@ -54,7 +55,7 @@ comments: true
   - **菜就该好好分清爱好与专业，没什么可想的**
   - 喜欢的画师画手很多列不下，会画请各位多画点
 
-- 术和虚拟人搞不动了，没时间
+- 术和虚拟人搞不动了，没时间,~~我只喜欢皮好看的~~
 - 其他
   - 保持神必
 
