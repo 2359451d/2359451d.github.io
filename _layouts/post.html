@@ -13,12 +13,13 @@ layout: compress
             position: fixed;
             left: 49%;
             top: 10%;
-            margin-left: 450px;
+            margin-left: 500px;
             border-left: 1px solid #eeeeee;
             width:auto;
-            height:100%;
+            height:auto;
             text-align: left;
-            font:13px/1.231 arial,helvetica,clean,sans-serif
+            font:15px/1.231 Fira Sans,sans-serif;
+            opacity: 50%;
         }
         #toc a {
             display: block;
@@ -39,9 +40,9 @@ layout: compress
         }
         </style>
 </head>
-<body data-spy="scroll" data-target=".toc" data-offset="20">
+<body data-spy="scroll" data-target="#toc" data-offset="20">
     {% include nav.html %}
-    <div id="toc"></div>
+    <div id="toc" class="container"></div>
     <!-- Header -->
     <header class="header" role="banner">
         <div class="wrapper animated fadeIn">
@@ -87,5 +88,8 @@ layout: compress
         $(document).ready(function() {
             $('#toc').toc();
         }); </script>
+    <script type="text/javascript">
+        $('body').scrollspy({ target: '#toc'});
+    </script>    
 </body>
 </html>
