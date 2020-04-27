@@ -21,7 +21,18 @@ comments: false
 - [X] ~~*生物quiz2 3.23-27*~~ [2020-04-04]
 - [X] ~~*WAD2小组presentation 3.27*~~ [2020-04-04]
 
-大三全是小组项目爷先吐了，本废物不想努力了，
+废物不想努力了，
+
+TODO
+
+- js
+- vue
+- spring
+- react
+- node.js
+- redis
+- docker
+- mybatis
 
 ![](/static/2020-02-23-04-01-27.png)
 

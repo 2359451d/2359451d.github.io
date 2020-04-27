@@ -67,12 +67,13 @@ box:               yhDMUG
 #xmpp:              username@server.com
 #hackernews:        username
 
-# Gems
+# Gems - plugins for jekyll < 3.5.0
 gems:
   - jekyll-mentions
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-gist
+  - jekyll-archives
 
 jekyll-mentions:
     base_url: https://github.com
