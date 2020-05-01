@@ -12,18 +12,35 @@ layout: compress
         #toc {
             position: fixed;
             left: 49%;
-            top: 10%;
+            top: 5%;
             margin-left: 500px;
-            border-left: 1px solid #eeeeee;
             width:auto;
             height:auto;
             text-align: left;
-            font:15px/1.231 Fira Sans,sans-serif;
-            opacity: 50%;
+            font:13px/1.231 Fira Sans,sans-serif;
+            background: rgba(255, 255, 35, 0.1);
+            color: white;
         }
-        #toc a {
+        #toc li ol a {
             display: block;
-            color: black;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* list-style */
+
+        #toc li ol {
+            list-style: disc;
+        }
+        
+        #toc li li {
+            list-style: disc;
+        }
+
+        #toc li a {
+            display: block;
+            color: white;
+            text-decoration: underline;
         }
         #toc a:hover {
             padding: 0;
@@ -44,7 +61,7 @@ layout: compress
     {% include nav.html %}
     <div id="toc" class="container"></div>
     <!-- Header -->
-    <header class="header" role="banner">
+    <header class="header" role="banner" style="position:absolute;">
         <div class="wrapper animated fadeIn">
             <div class="content">
                

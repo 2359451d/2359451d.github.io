@@ -1,12 +1,12 @@
 # Site
 title:              🍱
 bio:                '-  建设中  -<br />* 2020-02-16 *<br /><strong>仅作个人学习记录</strong>
-  <br /><br /><a href="https://www.pixiv.net/artworks/80786439">背景图源  - 米山舞老师  @yonema</a><br /><br /><a href="http://www.subcul-rise.jp/orangestar/">'
+  <br /><br /><a href="https://www.pixiv.net/artworks/77425763">背景图源  - lm7老师  twi@__Lm7__</a>'
 description:        "--"
 reading_time:       true
 words_per_minute:   200
 logo:               'assets/img/3.jpg'
-background:         'https://i.pximg.net/img-original/img/2020/04/14/16/36/10/80786439_p0.jpg'
+background:         'assets/img/2.jpg'
 tiled_bg:           true   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
 url:                http://www.barlinbento.top

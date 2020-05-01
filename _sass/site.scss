@@ -17,12 +17,10 @@ body {
 	@include font-rem($doc-font-size);
 	color: $color_tuatara;
 	background-color: $white;
-	background-position: left;
-	background-position-x: 20px;
 	background-size: cover;
 	background-repeat: no-repeat;	
 	background-attachment: fixed;
-	background-size: 30%;
+	background-size: 100%;
 	@media #{$small} {
 	    background-image: none !important;
 		background: $white;
@@ -73,13 +71,16 @@ body {
 	-ms-flex-align: center;
 	align-items: center;
 }
+
+
+
 .container {
 	width: 36rem;
 	max-width: 550px;
 	padding-right: 15px;
 	padding-left: 15px;
 	@include center-block();
-	background-color: $white;
+	background-color: rgba($white,0.55);
 	color: $color_shark;
 	z-index: 1;
 	border-radius: 3px;
@@ -108,7 +109,7 @@ body {
 	width: 75%;
 	max-width: 850px;
 	margin: 4rem auto;
-	background: $white;
+	background-color: rgba($white,0.65);
 	color: $color_tuatara;
 	padding: 2em;
 	border-radius: 3px;

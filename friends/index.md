@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 不好意思又忘了，我怎么可能会有朋友呢！
+title: 又忘了，我怎么会有朋友呢(摔)！
 date: 2020-02-17
 tags: [日常]
 comments: false
