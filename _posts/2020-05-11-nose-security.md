@@ -332,6 +332,7 @@ comments: true
   * 使用对称加密体制 - 加密数据
     * 加密解密需要使用 session key
 
+<<<<<<< HEAD
 🍬 应用 ：如 <font color="blue">HTTP(应用层)</font>中使用的**传输层安全协议TLS**
 
 * 由TLS协议进行创建加密通道需要的协商和认证。<font color="red">应用层协议传送的数据在通过TLS协议时都会被加密，</font>从而保证通信的私密性
@@ -513,6 +514,21 @@ comments: true
    * ![](/static/2020-05-14-18-40-26.png)
 
 ### Extension: Hybrid Cryptography
+=======
+🍬 应用 ：如 HTTP中的传输层安全协议TLS
+
+### Extension: TLS
+
+* 前身基于<font color="blue">SSL安全套接层协议()</font>
+
+> 安全传输层协议（TLS）用于**在两个通信应用程序之间提供保密性和数据完整性**
+>
+> 由 **TLS 记录协议（TLS Record）和 TLS 握手协议（TLS Handshake）** 两层组成
+
+---
+
+### Extension
+>>>>>>> a47f5fc... progress in cryptography
 
 [参考1](https://blog.csdn.net/jiang_xinxing/article/details/54134631)
 
@@ -535,6 +551,7 @@ comments: true
 🍊 会话密钥
 
 * 为本次通信生成的临时密钥，**一般由伪随机数生成器产生**.
+<<<<<<< HEAD
 * 作为对称加密的密钥使用
 
 ## Authentication: Data Tampering
@@ -691,3 +708,6 @@ comments: true
 =======
 * Secure RTP - Real-Time Transport Protocol
 >>>>>>> f111854... up
+=======
+* 作为对称加密的密钥使用
+>>>>>>> a47f5fc... progress in cryptography
