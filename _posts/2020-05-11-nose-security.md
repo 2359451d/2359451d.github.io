@@ -488,6 +488,7 @@ comments: true
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    * TLS**传输层之上**，<font color='blue'>用于任何两个应用程序(即，任意端口)之间的传输</font>。<font color="purple">TLS保证TCP数据，DTLS保证UDP数据传输</font>
 =======
    * TLS**传输层之上**，<font color='blue'>用于任何两个应用程序(即，任意端口)之间的传输</font>
@@ -495,6 +496,9 @@ comments: true
 =======
    * TLS**传输层之上**，<font color='blue'>用于任何两个应用程序(即，任意端口)之间的传输</font>。<font color="purple">TLS保证TCP数据，DTLS保证UDP数据传输</font>
 >>>>>>> 00c2fc8... key escrow
+=======
+   * TLS**传输层之上**，<font color='blue'>用于任何两个应用程序(即，任意端口)之间的传输</font>
+>>>>>>> f111854... up
    * ![](/static/2020-05-14-18-27-42.png)
 
 3. HTTPS(<b>在传输层适用SSL/TSL加密的HTTP</b>)
@@ -569,7 +573,11 @@ comments: true
   * <font color="blue">用非对称公钥解密先前的数字签名</font>
   * 比较两个哈希散列是否匹配
 
+<<<<<<< HEAD
 ## ASIDE：Existing Secure Protocols
+=======
+## Existing Secure Protocols
+>>>>>>> f111854... up
 
 🍊 安全协议 - 提供机密性&验证
 
@@ -586,6 +594,7 @@ comments: true
   * 适用于任意端口应用程序，基于TCP之上工作
 * Datagram TLS - DTLS
   * 基于传输层UDP协议
+<<<<<<< HEAD
 * Secure RTP - Real-Time Transport Protocol
   * 工作于应用层
   * 即时传输协议，即使传输<font color="purple">媒体流(multimedia)</font>数据。SRTP为加密版本，减少了服务访问拒绝攻击等风险。
@@ -679,3 +688,6 @@ comments: true
 =======
 ## ---
 >>>>>>> 00c2fc8... key escrow
+=======
+* Secure RTP - Real-Time Transport Protocol
+>>>>>>> f111854... up
