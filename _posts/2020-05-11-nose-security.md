@@ -487,10 +487,14 @@ comments: true
 2. TLS 传输层安全协议
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    * TLS**传输层之上**，<font color='blue'>用于任何两个应用程序(即，任意端口)之间的传输</font>。<font color="purple">TLS保证TCP数据，DTLS保证UDP数据传输</font>
 =======
    * TLS**传输层之上**，<font color='blue'>用于任何两个应用程序(即，任意端口)之间的传输</font>
 >>>>>>> 2681846... # This is a combination of 2 commits.
+=======
+   * TLS**传输层之上**，<font color='blue'>用于任何两个应用程序(即，任意端口)之间的传输</font>。<font color="purple">TLS保证TCP数据，DTLS保证UDP数据传输</font>
+>>>>>>> 00c2fc8... key escrow
    * ![](/static/2020-05-14-18-27-42.png)
 
 3. HTTPS(<b>在传输层适用SSL/TSL加密的HTTP</b>)
@@ -627,6 +631,7 @@ comments: true
 * 前瞻性解决方案与后瞻性解决方案 - 加密这样第三方托管系统的方式
   * 强制性的密钥公开法，强制性的解密法等等
 
+<<<<<<< HEAD
 ## ---
 
 ## Developing Secure Network App: Robustness Principle
@@ -671,3 +676,6 @@ comments: true
 🍊 网络安全问题
 
 ![](/static/2020-05-17-00-32-42.png)
+=======
+## ---
+>>>>>>> 00c2fc8... key escrow
