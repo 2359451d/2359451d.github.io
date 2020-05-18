@@ -3,14 +3,22 @@ layout: post
 title: "记录 - 如何设计&构建CPU"
 date: 2020-05-18
 excerpt: "底层架构记录，转载文章部分直译"
+<<<<<<< HEAD
 tags: [system, 2020, 计算机组成，其他，文章]
+=======
+tags: [system, 2020, 计算机结构体系，其他，文章]
+>>>>>>> 9309104... u
 feature: https://www.gla.ac.uk/media/Media_299663_smxx.jpg
 comments: true
 ---
 
 [参考文章 - How CPUs are Designed (by William Gayde)](https://www.techspot.com/article/1821-how-cpus-are-designed-and-built/)
 
+<<<<<<< HEAD
 <center>部分直译注意</center>
+=======
+看底层架构时候发现的写的很好的文章
+>>>>>>> 9309104... u
 
 * 目录
 {:toc}
@@ -22,12 +30,20 @@ comments: true
    * 指令集架构 ISA
    * 缓存   caching
    * 管线   pipelines
+<<<<<<< HEAD
    * 超线程&超标量 hyperthread & hyperscalar
+=======
+   * 超线程 hyperthread
+>>>>>>> 9309104... u
 
 2. [CPU设计过程 - CPU Design Process](https://www.techspot.com/article/1830-how-cpus-are-designed-and-built-part-2/)
 
    * 电路图 schematics
+<<<<<<< HEAD
    * 晶体管 transistors
+=======
+   * 景观提 transistors
+>>>>>>> 9309104... u
    * 逻辑门 logic gates
    * 时钟   clocking
 
@@ -112,7 +128,11 @@ comments: true
 * 意味着CPU将在每个周期完成几个指令，<font color="red">但任何一条指令从开始到结束可能需要更多周期</font>
 * 这种模型称为指令管线(pipeline,或流水线技术)，因为需要一定时间来填充管线。一旦管线填充满，得到恒定输出。
 * <font color="purple">并非所有指令可以同时完成</font>
+<<<<<<< HEAD
 * 现代CPU通常选择执行给定时间内最优先执行的指令【<font color="blue">乱序执行</font>,如超标量必须采用乱序执行来增加并行度】，并缓冲其他指令<font color="red">如果当前指令未就绪，CPU跳转至其他位置检查就绪指令</font>
+=======
+* 现代CPU通常选择执行给定时间内最优先执行的指令【<font color="blue">乱序执行</font>】，并缓冲其他指令<font color="red">如果当前指令未就绪，CPU跳转至其他位置检查就需指令</font>
+>>>>>>> 9309104... u
 
 ![4-stage pipeline](https://static.techspot.com/articles-info/1821/images/2019-04-21-image-4.png)
 ![4-stage-pipeline](/static/2020-05-18-01-47-09.png)
@@ -123,6 +143,7 @@ comments: true
 
 * [参考](https://www.cnblogs.com/CorePower/p/CorePower.html)
 * 计算机中的流水线是把一个重复的过程分解为若干个子过程，每个子过程与其他子过程并行进行。由于这种工作方式与工厂中的生产流水线十分相似， 因此称为流水线技术
+<<<<<<< HEAD
 * 本质：时间并行技术
 
 ---
@@ -386,3 +407,6 @@ comments: true
 > 有4个连接。N沟道MOSFET，电流:源->漏，P沟道MOSFET电流：源<-漏
 >
 > **栅极Gate是用于控制晶体管的开关**
+=======
+* 本质：时间并行技术
+>>>>>>> 9309104... u
