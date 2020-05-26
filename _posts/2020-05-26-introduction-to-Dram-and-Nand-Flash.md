@@ -2,8 +2,8 @@
 layout: post
 title: "记录 - DRAM & NAND Flash区别&定义介绍"
 date: 2020-05-18
-excerpt: "底层架构记录（RAM,ROM,FLash,SSD,DMA,接口协议总线等），转载文章部分直译"
-tags: [system, 2020, 计算机组成，其他，文章]
+excerpt: "底层架构记录（ROM,FLash,SSD,DMA,RAM等），转载文章部分直译"
+tags: [system, 2020, 计算机结构体系，其他，文章]
 feature: https://www.gla.ac.uk/media/Media_299663_smxx.jpg
 comments: true
 ---
@@ -474,4 +474,9 @@ comments: true
 ![](https://img-blog.csdnimg.cn/20190826131837459.png)
 
 > 主要功能是可以把数据从一个地方搬到另外一个地方(**内存<->I/O等外设**)，而且不占用CPU。不用CPU暂存数据
-> 
+
+### NAND Flash
+
+🍊 NAND闪存
+![](/static/2020-05-26-20-06-22.png)
+
