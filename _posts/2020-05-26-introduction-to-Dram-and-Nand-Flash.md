@@ -2,7 +2,7 @@
 layout: post
 title: "记录 - DRAM & NAND Flash区别&定义介绍"
 date: 2020-05-18
-excerpt: "底层架构记录（ROM,FLash,SSD,DMA,RAM等），转载文章部分直译"
+excerpt: "底层架构记录（RAM,ROM,FLash,SSD,DMA,等），转载文章部分直译"
 tags: [system, 2020, 计算机结构体系，其他，文章]
 feature: https://www.gla.ac.uk/media/Media_299663_smxx.jpg
 comments: true
@@ -344,6 +344,16 @@ comments: true
 
 ![](/static/2020-06-01-22-03-57.png)
 
+#### FRAM
+
+🍊 铁电存储器 - ferroelectric RAM
+
+> 基于DRAM的快速读写能力，**结合断电后不易失的能力**
+
+🍬 比闪存更快，但不能像SRAM&DRAM一样密集
+
+* 小范围应用手机，功率表等
+
 ### ROM
 
 ![](http://file2.dzsc.com/data/18/05/18/172957169.jpg)
@@ -401,8 +411,8 @@ comments: true
 🍬 大多数情况下闪存只是用来存储少量的代码，**这时 NOR 闪存更适合一些。而 NAND 则是高资料存储密度的理想解决方案**
 
 * NOR型更像内存，价格贵，容量小
-  * <font color="blue">读快(不需要加载到主存中)，写慢，适用于写一次可以读很多代码的场景</font>
-  * 通常用于存储程序代码(如OS代码，bios程序，重要代码)，并直接在flash内运行
+  * <font color="blue">读快，写慢，适用于写一次可以读很多代码的场景</font>
+  * 通常用于存储程序代码(如OS代码，重要代码)，并直接在flash内运行
 * NAND型更像硬盘，成本低，容量大
   * <font color="blue">最常用的闪存应用产品，如闪存盘(U盘)等都为NAND型</font>
   * <font color="purple">NAND型类似硬盘的操作方式，写速快</font>
