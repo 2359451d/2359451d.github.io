@@ -240,6 +240,24 @@ comments: true
 
 * <font color="red">在DRAM基础上，在输入输出接口进行时钟同步，以提高读写效率</font>
 
+##### DDR-SDRAM
+
+🍊 双倍速率SDRAM
+
+> **有双倍数据传输率的SDRAM**，其数据传输速度为系统时钟频率的两倍，由于速度增加，其传输性能优于传统的SDRAM
+
+* 1个时钟周期内传输2次数据
+
+##### FRAM
+
+🍊 铁电存储器 - ferroelectric RAM
+
+> 基于DRAM的快速读写能力，**结合断电后不易失的能力**
+
+🍬 比闪存更快，但不能像SRAM&DRAM一样密集
+
+* 小范围应用手机，功率表等
+
 #### SRAM
 
 🍊 静态RAM - 基本存储单元(memory cell)
@@ -325,16 +343,6 @@ comments: true
 #### DRAM vs SRAM
 
 ![](/static/2020-06-01-22-03-57.png)
-
-#### FRAM
-
-🍊 铁电存储器 - ferroelectric RAM
-
-> 基于DRAM的快速读写能力，**结合断电后不易失的能力**
-
-🍬 比闪存更快，但不能像SRAM&DRAM一样密集
-
-* 小范围应用手机，功率表等
 
 ### ROM
 
