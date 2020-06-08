@@ -65,6 +65,8 @@ comments: true
 
 * measuring the speed of access
 
+![](/static/2020-06-08-22-01-50.png)
+
 ### Spectre
 
 > 破坏应用之间的隔离性，攻击者有机会访问**应用程序所使用的内存空间&数据**
