@@ -5,7 +5,7 @@ bio:                '-  建设中  -<br />* 2020-02-16 *<br /><strong>仅作个�
 description:        "--"
 reading_time:       true
 words_per_minute:   200
-logo:               'assets/img/3.jpg'
+logo:               'assets/img/1.jpg'
 background:         'assets/img/2.jpg'
 tiled_bg:           true   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
