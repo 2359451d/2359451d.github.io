@@ -3,7 +3,7 @@ layout: post
 title: "记录 - 如何设计&构建CPU"
 date: 2020-05-18
 excerpt: "底层架构记录，转载文章部分直译"
-tags: [system, 2020, 计算机结构体系，其他，文章]
+tags: [system, 2020, 计算机组成，其他，文章]
 feature: https://www.gla.ac.uk/media/Media_299663_smxx.jpg
 comments: true
 ---

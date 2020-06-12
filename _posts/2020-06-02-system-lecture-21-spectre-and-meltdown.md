@@ -3,7 +3,7 @@ layout: post
 title: "System LECTURE 21 - Spectre & Meltdown"
 date: 2020-06-02
 excerpt: "两大热门漏洞"
-tags: [学习笔记, system, 2020]
+tags: [学习笔记, system, 计算机组成, 2020]
 feature: https://www.gla.ac.uk/media/Media_299663_smxx.jpg
 comments: true
 ---
