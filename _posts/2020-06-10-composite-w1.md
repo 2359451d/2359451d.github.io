@@ -250,4 +250,5 @@ comments: true
 
 ![](/static/2020-06-16-23-08-59.png)
 
-* 需要<font color="blue">外部记录介质R</font>, 作为输入输出源 
+* 需要<font color="blue">外部记录介质R</font>, 作为输入输出源
+* 
