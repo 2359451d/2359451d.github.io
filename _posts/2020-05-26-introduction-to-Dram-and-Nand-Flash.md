@@ -374,6 +374,9 @@ comments: true
 
 > 非易失性内存(可算辅存，但严格来说是固态内存)，比EEPROM(电擦除可改写ROM)读写更快，是其改进
 >
+> * 最大特点是**按块block擦除(每块大小根据不同厂家而定)**
+> * 而EEPROM一次只可擦除1个字节
+>
 > **作为存储介质，是一种存储技术**
 
 🍬 与RAM相比
@@ -388,16 +391,20 @@ comments: true
   * <font color="red">这些闪存卡虽然外观、规格不同，但是技术原理都是相同的</font>
 * 闪存盘
 * SSD固态硬盘
+  * 可作为HDD替代品，抗震速度快，无噪声，耗电低(但寿命短
+* 主板BIOS-ROM芯片
+
+🍬 无法代替RAM，<font color="red">因为RAM要求按字节改写</font>
 
 ##### NOR/NAND Flash
 
 🍬 大多数情况下闪存只是用来存储少量的代码，**这时 NOR 闪存更适合一些。而 NAND 则是高资料存储密度的理想解决方案**
 
 * NOR型更像内存，价格贵，容量小
-  * <font color="blue">读快，写慢，适用于写一次可以读很多代码的场景</font>
-  * 通常用于存储程序代码(如OS代码，重要代码)，并直接在flash内运行
+  * <font color="blue">读快(不需要加载到主存中)，写慢，适用于写一次可以读很多代码的场景</font>
+  * 通常用于存储程序代码(如OS代码，bios程序，重要代码)，并直接在flash内运行
 * NAND型更像硬盘，成本低，容量大
-  * <font color="blue">最常用的闪存应用产品，如闪存盘等都为NAND型</font>
+  * <font color="blue">最常用的闪存应用产品，如闪存盘(U盘)等都为NAND型</font>
   * <font color="purple">NAND型类似硬盘的操作方式，写速快</font>
 
 🍊 NAND闪存
