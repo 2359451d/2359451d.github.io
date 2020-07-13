@@ -1111,3 +1111,4 @@ tang
 * 还可采用<font color="blue">间接转移指令`jr rs`</font>
   * 将要转移的目标地址存入寄存器，从而可使用`32bit`目标地址，通过R型指令实现(占用其中一个寄存器位域，新增一种`funct`编码)
 
+## Exercise: MARS
