@@ -2,13 +2,13 @@
 layout: post
 title: "Cousera笔记 - 计算机组成2 · MARS MIPS Simulator练习"
 date: 2020-07-15
-excerpt: "MARS: MIPS模拟器练习，概念补全"
+excerpt: "MARS: MIPS模拟器练习，概念补全，重点:string array定义(伪)&procedure定义"
 tags: [学习笔记, coursera, 计算机组成, 2020, exercise]
 feature: https://www.gla.ac.uk/media/Media_299663_smxx.jpg
 comments: true
 ---
 
-计算机组成第二讲作业，笨比写法orz
+计算机组成第二讲作业，很多地方可以酌情优化，有缘再补
 
 [参考课程 - 计算机组成](https://www.coursera.org/learn/jisuanji-zucheng/home/week/3)
 [其他参考 - lecture notes (VT)](http://courses.cs.vt.edu/~cs2505/fall2010/Notes/pdf/)
@@ -183,6 +183,7 @@ pow2: .word 1, 2, 4, 8, 16, 32, 64, 128
 * 过程的暂存器scratchpad - 易失的
   * 调用其他过程时，寄存器都会改变
 * 因此每个过程的寄存器值需要备份在栈(内存维护)中
+* <font color="blue">注意，栈用于存放local variables & extra args & return values</font>
 
 🍬 栈&过程相关寄存器
 
@@ -209,7 +210,7 @@ pow2: .word 1, 2, 4, 8, 16, 32, 64, 128
 ![](/static/2020-07-18-14-58-44.png)
 ![](/static/2020-07-18-15-07-09.png)
 
-### 调用过程栈帧变化
+### Calling Procedure: change of the Stack Frame
 
 [参考1](https://www.cnblogs.com/zlcxbb/p/5759776.html)
 [参考2](https://www.cnblogs.com/yanwei-wang/p/8065855.html)
@@ -244,9 +245,442 @@ pow2: .word 1, 2, 4, 8, 16, 32, 64, 128
 
 * 如需要额外参数，则需要先将现有寄存器信息压入栈
 
-## 第一题
+### Push Elements to Stack
+
+🍊 压栈
+
+* `$sp`栈指针下移(减法，栈帧地址由下生长，高到低)
+* 将元素压入栈
+
+![](/static/2020-07-20-20-40-17.png)
+
+```mips
+# push $t1 & $t2
+sub $sp, $sp, 8
+sw $t1, 4($sp)
+sw $t2, 0($sp)
+
+# similarily
+sw $t1, -4($sp)
+sw $t2, -8($sp)
+sub $sp, $sp, 8
+```
+
+### Accessing and Pop Elements
+
+![](/static/2020-07-20-20-43-41.png)
+
+🍊 获取信息
+
+* 知道偏移量情况下，可以获取栈中任意元素
+
+🍊 获取`$t1`值
+
+```mips
+lw $s0, 4($sp)
+```
+
+🍊 弹栈，释放栈帧
+
+* 如弹出`$t2`，`addi $sp, $sp, 4`
+  * 数据仍存在于RAM中，但无法通过`$sp`访问
+
+## Exercise 1
+
+🍬 坑，mips中定义string数组没有直接方法，不能直接`List: .word "ABC","CBD","DEF",...`定义，每个string元素实质可看作是指针(标签)
+
+* 第二种解法，通过`.asciiz`定义的结束符`\0`判断偏移量，循环遍历,<font color='blue'>注意生成的是字符长串，非数组，每个元素由结束符'\0'隔开</font>
+* `\0`占1个字节
+
+![](/static/2020-07-20-22-45-04.png)
+![](/static/2020-07-20-22-45-35.png)
 
 看几个帮助文档写出来的东西非常低效草，，个人思路是字典/switch/jumptable但是没搞明白jumptable怎么实现的
 
 先用if结构实现了，完整的就不贴了，丢人没什么意义
 ![](/static/2020-07-15-23-27-02.png)
+
+---
+
+### Solution
+
+#### Python
+🍊 改进 - 对照高级语言实现
+
+```python
+"""
+determine if the input character is capital
+return boolean
+"""
+def isCapital(char):
+    if 65<=ord(char)<=90:
+        return True
+
+"""
+determine if the input character is lower
+return boolean
+"""
+def isUncapitalized(char):
+    if 97<=ord(char)<=122:
+        return True
+
+"""
+determine if the input character is numeric
+return boolean
+"""
+def isNumeric(char):
+    if 48<=ord(char)<=57:
+        return True
+
+"""
+main method
+"""
+if __name__ == "__main__":
+    capitalList = ["Alpha","Bravo","China","Delta","Echo","Foxtrot","Golf","Hotel","India","Juliet","Kilo","Lima","Mary","November","Oscar","Paper","Quebec","Research","Sierra","Tango","Uniform","Victor","Whisky","X-ray","Yankee","Zulu"]
+    numericList = ["zero","First","Second","Third","Fourth","Fifth","Sixth","Seventh","Eighth","Nineth"]
+    lowerList = ["alpha","bravo","china","delta","echo","foxtrot","golf","hotel","india","juliet","kilo","lima","mary","november","oscar","paper","quebec","research","sierra","tango","uniform","victor","whisky","x-ray","yankee","zulu"]
+    while True:
+        prompt = input("Please type a character, '?' to exit:\n")
+        if prompt == '?':
+            break
+        if isNumeric(prompt):
+            result = numericList[int(prompt)]
+        elif isCapital(prompt):
+            # 65-90
+            result = capitalList[ord(prompt)-65]
+        elif isUncapitalized(prompt):
+            # 97-122
+            result = lowerList[ord(prompt)-97]
+        else:
+            result = '*' # result = chr(42)
+        print(result)
+```
+
+#### MIPS
+
+```mips
+	.data
+  newline:	.asciiz "\n"
+  msg_prompt:	.asciiz "Please type a character, '?' to exit:"
+  capitalListLen:	.space 104 # 26 * 4B = 104B
+  capitalList: .asciiz "Alpha","Bravo","China","Delta","Echo","Foxtrot","Golf","Hotel","India","Juliet","Kilo","Lima","Mary","November","Oscar","Paper","Quebec","Research","Sierra","Tango","Uniform","Victor","Whisky","X-ray","Yankee","Zulu"
+  numericListLen:	.space 40
+  numericList: .asciiz "zero","First","Second","Third","Fourth","Fifth","Sixth","Seventh","Eighth","Nineth"
+  lowerListLen:		.space 104
+  lowerList:  .asciiz  "alpha","bravo","china","delta","echo","foxtrot","golf","hotel","india","juliet","kilo","lima","mary","november","oscar","paper","quebec","research","sierra","tango","uniform","victor","whisky","x-ray","yankee","zulu"
+	.text
+main:
+  ## print prompt & read char
+  li $v0, 4
+  la $a0, msg_prompt
+  syscall
+  li $v0, 4
+  la $a0, newline
+  syscall
+  li $v0, 12 
+  syscall
+  
+  ## check if input=='?'
+  move $a0, $v0 # $a0 = prompt
+  beq $a0, 63, Terminate # prompt=='?' ,type '?' to terminate
+
+########################
+checkIfCapital:
+  jal isCapital # isCapital(prompt)
+  seq $t0, $v0, 1 # set $t0=1 if $v0 == 1
+  bne $t0, 1, checkIfNumeric # branch if not isCapital(prompt)
+  
+  ## if is capital
+  subi $a0, $a0, 65 # prompt-65, arg1: index
+  la $a1, capitalList # arg2: &List
+  jal getElement
+  move $v1, $v0
+  la $a0, newline
+  li $v0, 4
+  syscall
+  la $a0, ($v1)
+  li $v0, 4
+  syscall
+  la $a0, newline
+  li $v0, 4
+  syscall
+  j main
+########################
+checkIfNumeric:
+  jal isNumeric # isNumeric(prompt)
+  seq $t0, $v0, 1 # set $t0=1 if $v0 == 1
+  bne $t0, 1, checkIfLower # branch if not isNumeric(prompt)
+  
+  ## if is numeric
+  subi $a0, $a0, 48 # prompt-48, arg1: index
+  la $a1, numericList # arg2: &List
+  jal getElement
+  move $v1, $v0
+  la $a0, newline
+  li $v0, 4
+  syscall
+  la $a0, ($v1)
+  li $v0, 4
+  syscall
+  la $a0, newline
+  li $v0, 4
+  syscall
+  j main
+########################
+checkIfLower:
+  jal isUncapitalized # isUncapitalized(prompt)
+  seq $t0, $v0, 1 # set $t0=1 if $v0 == 1
+  bne $t0, 1, other # branch if not isNumeric(prompt)
+  
+  ## if is lower case
+  subi $a0, $a0, 97 # prompt-97, arg1: index
+  la $a1, lowerList # arg2: &List
+  jal getElement
+  move $v1, $v0
+  la $a0, newline
+  li $v0, 4
+  syscall
+  la $a0, ($v1)
+  li $v0, 4
+  syscall
+  la $a0, newline
+  li $v0, 4
+  syscall
+  j main
+########################
+other: # print ‘*’
+  li $v0, 4
+  la $a0, newline
+  syscall
+  li $a0, 42
+  li $v0, 11
+  syscall
+  li $v0, 4
+  la $a0, newline
+  syscall
+  j main
+########################
+Terminate:
+  li $v0, 10
+  syscall
+########################
+getElement: # int getElement($a0: index, $a1: list), return the element address
+  addi $sp, $sp, -12 # reuse 3 reg, allocating 12B of contiguous block
+  sw $ra, 12($sp)
+  sw $t0, 8($sp)
+  sw $t1, 4($sp)
+  sw $t2, 0($sp)
+
+  ## initialise
+  move $t0, $a1 # $t0=i=start address of List
+  li $t1, 0 # $t1=j=0
+  Loop: # find the index(byte)
+  	beq $t1, $a0, endLoop # branch if $t1==$a0: index, (scan finished at the position expected)
+  	lb $t2, ($t0) # $t2:= capitalList[i](byte)
+  	addi $t0, $t0, 1
+  	beq $t2, $zero, nextElement # $t2?= '\0'
+  	j Loop
+  nextElement:
+  	addi $t1, $t1, 1
+  	j Loop
+  endLoop:
+        move $v0, $t0
+  lw $ra, 12($sp)
+  lw $t0, 8($sp)
+  lw $t1, 4($sp)
+  lw $t2, 0($sp)
+  addi $sp, $sp, 12
+  jr $ra
+########################
+isCapital:
+  # one arg: char allocate 4B Stack
+  addi $sp, $sp, -4
+  sw $t0, 0($sp)
+  sw $ra, 4($sp)
+  
+  move $t0, $a0 # char = $a0
+  blt $t0, 65, notNumeric # branch if char<=65
+  bgt $t0, 90, notNumeric # branch if char>=90
+  li $v0, 1
+  j endIsCapital
+notNumeric:
+  li $v0, 0
+endIsCapital:
+  lw $ra, 4($sp)
+  lw $t0, 0($sp)
+  addi $sp, $sp, 4
+  jr $ra
+########################
+isNumeric:
+  # arg: char allocate 4B  contiguous block of memory for stack
+  addi $sp, $sp, -4
+  sw $ra, 4($sp)
+  sw $t0, 0($sp) # char
+  
+  move $t0, $a0
+  blt $t0, 48, isAlphabet
+  bgt $t0, 57, isAlphabet
+  li $v0, 1
+  j endIsNumeric
+isAlphabet:
+  li $v0, 0
+endIsNumeric:
+  lw $ra, 4($sp)
+  lw $t0, 0($sp)
+  addi $sp, $sp, 4
+  jr $ra
+########################
+isUncapitalized:
+  # arg: char allocate 4B contiguous block of memory for stack
+  addi $sp, $sp, -4
+  sw $ra, 4($sp)
+  sw $t0, 0($sp)
+  
+  move $t0, $a0
+  blt $t0, 97, notUncapitalized
+  bgt $t0, 122, notUncapitalized
+  li $v0, 1
+  j endIsUncapitalized
+notUncapitalized:
+  li $v0, 0
+endIsUncapitalized:
+  lw $ra, 4($sp)
+  lw $t0, 0($sp)
+  addi $sp, $sp, 4
+  jr $ra
+```
+
+---
+
+指针写法参考
+
+![](/static/2020-07-21-19-08-02.png)
+
+## Exercise 2
+
+![](/static/2020-07-21-23-03-32.png)
+
+注意string录入缓冲地址&大小，其他无难度
+
+### Solution
+
+#### Python
+
+`charFinder.py`
+
+```python
+def charFinder(user_input,ch):
+    flag = -1
+    for i in range(len(user_input)):
+            if user_input[i]==ch:
+                flag = i
+                break
+    return flag
+
+if __name__ == "__main__":
+    prompt = input("Please type a string:")
+    while True:
+        char = input("Please type a char for searching, '?' to exit:") # case sensetive
+        if char=='?':
+            break
+        index = charFinder(prompt, char)
+        if index!=-1:
+            print("Success!Location:{0}".format(index+1))
+        else:
+            print("Fail!")
+```
+
+#### MIPS
+
+```mips
+	.data
+string_buffer: .space 1024 
+msg_prompt:  .asciiz "Please type a string:\n"
+msg_prompt2:  .asciiz "Please type a char for searching, '?' to exit:\n"
+msg_fail:  .asciiz "Fail!\n"
+msg_success:  .asciiz "Success!Location: "
+newline: .asciiz "\n"
+	.text
+main:
+## print prompt & read string
+  li $v0, 4
+  la $a0, msg_prompt
+  syscall
+  la $a0, string_buffer
+  li $a1, 1024
+  li $v0, 8
+  syscall
+  move $t0, $a0 # $t0:= string
+#########################################
+Loop:
+## print prompt & read char circularly
+  li $v0, 4
+  la $a0, msg_prompt2
+  syscall
+  li $v0, 12
+  syscall
+  move $t1, $v0 # $t1:= char
+  li $v0, 4
+  la $a0, newline
+  syscall
+
+  beq $t1, 63, endLoop
+  move $a0, $t0
+  move $a1, $t1
+  jal charFinder # $v0 = charFinder(prompt, char)
+  beq $v0, -1,Fail # flag=index=-1
+  move $t2, $v0
+Success:
+  la $a0, msg_success
+  li $v0, 4
+  syscall
+
+  move $a0, $t2
+  li $v0, 1
+  syscall
+  
+  la $a0, newline
+  li $v0, 4
+  syscall
+  
+  j Loop
+Fail:
+  li $v0, 4
+  la $a0, msg_fail
+  syscall
+  j Loop
+endLoop:
+  li $v0, 10
+  syscall
+#########################################
+charFinder:# int charFinder($a0: prompt, $a1: char)
+  addi $sp, $sp, -16 # allocate 20B contiguous block of memory
+  sw $ra, 16($sp)
+  sw $t0, 12($sp)
+  sw $t1, 8($sp)
+  sw $t2, 4($sp)
+  sw $t3, 0($sp)
+  
+  li $t0, -1 # flag = -1
+  li $t1, 0 # i = 0
+  
+  readByte:
+    move $t2, $a0
+    add $t2, $t2, $t1
+    add $t1, $t1, 1 # i++
+    lb $t3, ($t2) # current char
+    beq $t3, $zero, endReadByte
+    bne $t3, $a1, readByte
+    move $t0, $t1
+  endReadByte:
+  move $v0, $t0 # return flag
+  lw $ra, 16($sp)
+  lw $t0, 12($sp)
+  lw $t1, 8($sp)
+  lw $t2, 4($sp)
+  lw $t3, 0($sp)
+  addi $sp, $sp, 16
+  jr $ra
+  
+
+```
