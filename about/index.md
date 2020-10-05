@@ -14,7 +14,7 @@ comments: true
 <strong>逻辑文笔能力差，该blog仅用作学术(基本上只作学习笔记)，以下内容已经克制中二要素。</strong>
 
 - 叫什么都可以 g
-- 某村cs在读(技术文化水平各方面都低于专业平均水平，**菜的一批，，在抓紧赶课和赶框架，给口饭吃吧球球了**)
+- 某村cs在读(技术文化水平各方面都低于专业平均水平，**菜的一批，，在抓紧赶课和赶框架，给口饭吃吧**)
   - 目前课程安排...:
     - 大二上
       - SQL & User Research
@@ -28,11 +28,9 @@ comments: true
       - Algorithm and Data Structure
       - Web Application Development
       - Biology 1B
-    - 大三strand
-      - 暂定 **network，os**，cyber security，**dba**，遇事不决选三大件，
+    - 大三 no strands
       - 学校没有想搞的图形学，，
-      - 深度学习，你好强大，！
-- 目前fight for 后端开发，嵌入式永远滴神
+- 目前fight for 后端开发
 - 现实自闭，网络蛆虫、，目前比较忙天天都在学习，**忙归忙，怎么就没有能掏出来的项目呢（悲）**
 
 ## 好宅哦，我都不看
